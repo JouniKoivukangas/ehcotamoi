@@ -1,6 +1,6 @@
 <?php
 try { 
- $yhteys = new PDO("mysql:host=localhost;dbname=jkoivuka", "jkoivuka", "kantoMAASTO");
+ $yhteys = new PDO("mysql:host=localhost;dbname=jko", "jko", "kaMA");
  } catch (PDOException $e) { 
  die("VIRHE NRO 1: " . $e->getMessage());
 } 
@@ -14,9 +14,9 @@ $kysely = $yhteys->prepare("SELECT * FROM Ajanvaraukset");
 // suoritetaan kysely
 $kysely->execute();
 
-// n‰ytet‰‰n kyselyn tulokset taulukossa
+// n√§ytet√§√§n kyselyn tulokset taulukossa
 echo "<table>";
-// k‰sitell‰‰n tulostaulun rivit yksi kerrallaan
+// k√§sitell√§√§n tulostaulun rivit yksi kerrallaan
 $rivinro = 1;
 while ($rivi = $kysely->fetch()) {
     $pv = htmlspecialchars($rivi["paiva"]);
